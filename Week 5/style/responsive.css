@@ -1,0 +1,60 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(252, 139, 34);
+}
+
+header{
+    background-color: rgb(2, 63, 63);
+    color: rgb(211, 214, 214);
+    text-align: center;
+    padding: 10px;
+}
+
+/* this is the parent for our boxes */
+.container{
+    display: flex; /* use the flexbox layout */
+    flex-wrap: wrap; /* allows the children/items to wrap onto multiple lines */
+    padding: 20px;
+}
+
+/* styles for the boxes/children */
+.box{
+    flex-grow: 1; /* this allows the box to grow */
+    flex-shrink: 1; /* this allows the box to shrink */
+    flex-basis: 300px; /* initial size of the box */
+
+    /* shorthand for the 3 settings above: grow, shrink, basis: flex: 1 1 300px; */
+
+    background-color: lightgrey;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(49, 47, 47);
+    transition: transform 0.3s ease;
+}
+
+.box img{
+    max-width: 100%; /* ensures the images will not be bigger than the boxes */
+    height: auto; /* maintain the aspect ratio */
+}
+
+.box:hover{
+    transform: scale(1.05); /* make the box slightly larger on hover */
+}
+
+/* media query for screens with a maximum width of 600px */
+@media (max-width: 600px){
+    header{
+        font-size: .8rem; /* reduce the font size for smaller screens */
+    }
+
+    .container{
+        padding: 0.5rem; /* reduce the padding for smaller screen sizes */
+    }
+
+    .box{
+        padding: 0.5rem; /* reduce the padding for smaller screen sizes */
+        margin: 0.5rem; /* reduce the margin for smaller screen sizes */
+    }
+}
